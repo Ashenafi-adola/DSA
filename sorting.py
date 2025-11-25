@@ -19,3 +19,27 @@ def selectionsort(nums):
         nums.insert(i,a)
     print(nums)
 selectionsort(list2)
+
+list3 = [1034, 56, 9832, 421, 778, 19, 5001]
+def insertionsort(nums):
+    for i in range(1, len(nums)):
+        a = nums[i]
+        for j in range(i-1,-1,-1):
+            if nums[j] > nums[i]:
+                nums.remove(a)
+                nums.insert(j,a)
+    print(nums)
+insertionsort(list3)
+
+def efficientinsertionsort():
+    my_array = [64, 34, 25, 12, 22, 11, 90, 5]
+    n = len(my_array)
+    for i in range(1,n):
+        insert_index = i
+        current_value = my_array.pop(i)
+        for j in range(i-1, -1, -1):
+            if my_array[j] > current_value:
+                insert_index = j
+        my_array.insert(insert_index, current_value)
+
+    print("Sorted array:", my_array)
