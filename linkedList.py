@@ -33,9 +33,8 @@ def insertNewNode(head, new_node, position):
         currentNode = currentNode.next
         i += 1
     
-    nextnode = currentNode.next
+    new_node.next = currentNode.next
     currentNode.next = new_node
-    new_node.next = nextnode
 
     return head
 
@@ -51,6 +50,7 @@ node1.next = node2
 node2.next = node3
 node3.next = node4
 node4.next = node5
+
 print("before deletion")
 traverseList(node1)
 deleteSpecificNode(node1, node3)
@@ -59,5 +59,5 @@ traverseList(node1)
 print("before insertion")
 traverseList(node1)
 print("after insetion")
-node1 = insertNewNode(node1, new_node, 4)
+node1 = insertNewNode(node1, new_node, 2)
 traverseList(node1)
