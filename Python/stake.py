@@ -21,3 +21,9 @@ class Stack:
 myStack = Stack()
 myStack.push(3)
 print(myStack.stackSize())
+print(myStack.peek())
+print(myStack.isEmpity())
+print(myStack.pop())
+print(myStack.isEmpity())
+
+class 
