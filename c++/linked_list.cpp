@@ -28,6 +28,34 @@ void insert_first(int data){
 
 } 
 
+void delete_first(){
+    if(head != NULL){
+        head = head->next;
+    }
+}
+
+void insert_last(int data){
+    Node *newNode = new Node;
+    newNode->data = data;
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    newNode->next = NULL;
+    temp->next = newNode;
+    
+}
+
+void delete_last(){
+    Node* temp = head;
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = NULL;
+}
+
 void display(){
     Node *temp = head;
     while(temp != NULL){
@@ -46,6 +74,14 @@ int main(){
     insert_first(435);
 
     display();
-
+    delete_first();
+    cout<<endl;
+    display();
+    delete_last();
+    cout<<endl;
+    display();
+    insert_last(34);
+    cout<<endl;
+    display();
     return 0;
 }
