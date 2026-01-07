@@ -30,6 +30,20 @@ void insert_first(int data){
     }
 }
 
+void delete_first(){
+    if(head != NULL){
+        head = head->next;
+        head->prev = NULL;
+    }
+}
+
+void delete_last(){
+    if(tail != NULL){
+        tail = tail->prev;
+        tail->next = NULL;
+    }
+}
+
 void display(){
     Node * temp = head;
     while(temp != NULL){
@@ -51,9 +65,13 @@ int main(){
     insert_first(34);
     insert_first(54);
     insert_first(6);
+    display();
+    delete_first();
     insert_first(34);
     insert_first(65);
     
+    display();
+    delete_last();
     display();
     reverse();
     
