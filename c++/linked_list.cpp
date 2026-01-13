@@ -29,9 +29,11 @@ void insert_first(int data){
 } 
 
 void delete_first(){
+    Node * temp = head;
     if(head != NULL){
         head = head->next;
     }
+    delete temp;
 }
 
 void insert_last(int data){
@@ -53,7 +55,8 @@ void delete_last(){
     {
         temp = temp->next;
     }
-    temp->next = NULL;
+    delete temp->next;
+    temp ->next = NULL;
 }
 
 void display(){
